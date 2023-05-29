@@ -1,0 +1,91 @@
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.contenedor {
+    height: 100%;
+    background-color: #09A1E1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#step-1 {
+    height: 70%;
+    width: 60%;
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5%;
+}
+
+.step-by-step-box {
+    height: 92%;
+    width: 30%;
+    background-image: url(bg-sidebar-desktop.svg);
+    background-size: cover;
+    background-position-y: bottom;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 4.5%;
+    padding-left: 2%;
+    border-radius: 15px;
+}
+
+.box-1 {
+    height: 10%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10%;
+    /* background-color: aliceblue; */
+}
+
+.box {
+    gap: 100px;
+}
+
+.circles {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background-color: hsl(206, 94%, 87%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.step-title {
+    font-style: normal;
+    font-weight: 400;
+    color: hsl(231, 11%, 63%);
+}
+
+.step-subtitle {
+    color: white;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+}
