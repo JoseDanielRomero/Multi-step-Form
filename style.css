@@ -237,3 +237,144 @@ html, body {
 
 /* --------------STEP 2: ESTILO CONTENIDO IMPORTANTE-------------- */
 
+.important-step-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.step-2-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* background-color: blue; */
+    height: 62%;
+}
+
+.botones-planes {
+    height: 85%;
+    width: 30.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 8px;
+    border: 1px solid rgb(198, 198, 198);
+    background-color: transparent;
+    padding: 3.5% 3%;
+    transition: .2s;
+}
+
+.botones-planes:hover {
+    cursor: pointer;
+    border: 1px solid hsl(243, 100%, 62%);
+}
+
+.botones-planes:focus {
+    background-color: #f3f5fd;
+    border: 1px solid hsl(243, 100%, 62%);
+}
+
+.text-plan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.plan-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: hsl(213, 96%, 18%);
+    padding-bottom: 6px;
+}
+
+.plan-subtitle {
+    font-size: .8rem;
+    font-weight: 400;
+    color: hsl(231, 9%, 60%);
+}
+
+.step-2-rectangle {
+    height: 16%;
+    background-color: #f3f5fd;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 7px;
+}
+
+.monthly-toggle, .yearly-toggle {
+    font-size: 1rem;
+    font-weight: 500;
+    width: 37%;
+    color: hsl(231, 9%, 60%);
+}
+
+.monthly-toggle {
+    text-align: end;
+}
+
+/* ------STEP 2: BOTON TOGGLE------ */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(213, 96%, 18%);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  #monthly-year-toggle:checked + .slider {
+    background-color: hsl(213, 96%, 18%);
+  }
+  
+  #monthly-year-toggle:focus + .slider {
+    box-shadow: 0 0 1px hsl(213, 96%, 18%);
+  }
+  
+  #monthly-year-toggle:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
