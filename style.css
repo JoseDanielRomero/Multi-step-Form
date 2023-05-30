@@ -254,11 +254,6 @@ html, body {
 }
 
 .botones-planes {
-    width: 30.5%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
     border-radius: 8px;
     border: 1px solid rgb(198, 198, 198);
     background-color: transparent;
@@ -282,6 +277,14 @@ html, body {
 
 .yearly-option {
     height: 80%;
+}
+
+.monthly-option, .yearly-option {
+    width: 30.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .text-plan {
@@ -344,13 +347,13 @@ html, body {
     height: 34px;
   }
   
-  .switch input {
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
+}
   
-  .slider {
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -360,9 +363,9 @@ html, body {
     background-color: hsl(213, 96%, 18%);
     -webkit-transition: .4s;
     transition: .4s;
-  }
+}
   
-  .slider:before {
+.slider:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -372,26 +375,58 @@ html, body {
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
+}
   
-  #monthly-year-toggle:checked + .slider {
+#monthly-year-toggle:checked + .slider {
     background-color: hsl(213, 96%, 18%);
-  }
+}
   
-  #monthly-year-toggle:focus + .slider {
+#monthly-year-toggle:focus + .slider {
     box-shadow: 0 0 1px hsl(213, 96%, 18%);
-  }
+}
   
-  #monthly-year-toggle:checked + .slider:before {
+#monthly-year-toggle:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-  }
+}
   
-  .slider.round {
+.slider.round {
     border-radius: 34px;
-  }
+}
   
-  .slider.round:before {
+.slider.round:before {
     border-radius: 50%;
-  }
+}
+
+/* --------------STEP 3: ESTILO CONTENIDO IMPORTANTE-------------- */
+
+.important-step-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4%;
+}
+
+.botones-addons {
+    height: 27%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plan-text-extra {
+    font-size: .8rem;
+    font-weight: 400;
+    color: hsl(243, 100%, 62%);
+}
+
+.container {
+    /* background-color: red; */
+}
+
+.text-adjust {
+    width: 60%;
+    margin-left: -5%;
+}
