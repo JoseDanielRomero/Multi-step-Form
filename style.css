@@ -12,24 +12,27 @@ html, body {
 
 .contenedor {
     height: 100%;
-    background-color: #09A1E1;
+    background-color: #eef5ff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#step-1 {
+.steps {
     height: 70%;
     width: 60%;
-    background-color: black;
+    background-color: #fbfbfb;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5%;
+    box-shadow: 8px 7px 47px 0px rgba(0,0,0,0.14);
 }
+
+/* --------------GENERAL: ESTILO BARRA LATERAL-------------- */
 
 .step-by-step-box {
     height: 92%;
@@ -42,20 +45,20 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 4.5%;
+    padding-top: 3.5%;
     padding-left: 2%;
     border-radius: 15px;
+    gap: 4%;
 }
 
-.box-1 {
+.box-out {
     height: 10%;
     width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 10%;
-    /* background-color: aliceblue; */
+    gap: 8%;
 }
 
 .box {
@@ -66,26 +69,168 @@ html, body {
     height: 30px;
     width: 30px;
     border-radius: 30px;
-    background-color: hsl(206, 94%, 87%);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 500;
+    text-align: center;
+}
+
+.circle-on {
+    background-color: hsl(206, 94%, 87%);
+    color: hsl(213, 96%, 18%);
+}
+
+.circle-off {
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+
 }
 
 .step-title {
     font-style: normal;
     font-weight: 400;
-    color: hsl(231, 11%, 63%);
+    color: hsl(230, 14%, 68%);
+    font-size: .8rem;
 }
 
 .step-subtitle {
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 1px;
     color: white;
+    font-size: .9rem;
 }
 
-h1 {
-    font-size: 20px;
-    margin: 0;
+/* --------------GENERAL: ESTILO TITULO Y SUBTITULO-------------- */
+
+.main-content {
+    height: 92%;
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2%;
+}
+
+.text-box {
+    height: 13%;
+    width: 80%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-title {
+    font-style: normal;
+    font-weight: 700;
+    color: hsl(213, 96%, 18%);
+    font-size: 1.9rem;
+}
+
+.main-subtitle {
+    font-style: normal;
+    font-weight: 400;
+    color: hsl(231, 11%, 63%);
+    font-size: 0.9rem;
+}
+
+/* --------------GENERAL: ESTILO CONTENIDO IMPORTANTE-------------- */
+
+.important-box {
+    height: 65%;
+    width: 80%;
+    /* background-color: green; */
+}
+
+/* --------------GENERAL: ESTILO ZONA DE BOTONES-------------- */
+
+.button-box {
+    height: 12%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: gray; */
+}
+
+.botones {
+    font-weight: 500;
+    font-size: 1rem;
+    height: 85%;
+    border: none;
+}
+
+#back-button {
+    width: auto;
+    padding: 0 1%;
+    background-color: transparent;
+    color: hsl(231, 11%, 63%);
+    transition: .2s;
+}
+
+#next-button {
+    width: 28%;
+    border-radius: 11px;
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    transition: .2s;
+}
+
+#confirm-button {
+    width: 28%;
+    border-radius: 11px;
+    background-color: hsl(243, 100%, 62%);
+    color: white;
+    transition: .2s;
+}
+
+#back-button:hover {
+    cursor: pointer;
+    color: hsl(213, 96%, 18%);
+}
+
+#next-button:hover {
+    cursor: pointer;
+    background-color: hsl(213, 86%, 29%);
+}
+
+#confirm-button:hover {
+    cursor: pointer;
+    background-color: hsl(243, 87%, 69%);
+}
+
+/* --------------STEP 1: ESTILO CONTENIDO IMPORTANTE-------------- */
+
+.step-1-labels {
+    color:  hsl(213, 96%, 18%);
+    font-size: .8rem;
+}
+
+.step-1-inputs {
+    height: 15%;
+    width: 100%;
+    color: hsl(213, 94%, 19%);
+    font-size: .9rem;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1px solid rgb(198, 198, 198);
+    background-color: transparent;
+    padding: 0 4%;
+    margin-top: 1.5%;
+    margin-bottom: 4%;
+}
+
+.step-1-inputs:focus{
+    outline: none;
+    border: 1px solid hsl(243, 100%, 62%);
+}
+
+.step-1-inputs::placeholder {
+    color: rgba(128, 128, 128, 0.749);
 }
