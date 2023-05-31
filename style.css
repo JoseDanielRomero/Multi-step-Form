@@ -249,8 +249,6 @@ html, body {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    /* background-color: blue; */
-    height: 75%;
 }
 
 .botones-planes {
@@ -272,7 +270,7 @@ html, body {
 }
 
 .monthly-option {
-    height: 70%;
+    height: 90%;
 }
 
 .yearly-option {
@@ -307,14 +305,11 @@ html, body {
     color: hsl(231, 9%, 60%);
 }
 
-.subtitle-y {
-    padding-bottom: 7px;
-}
-
 .plan-bonus {
     font-size: .7rem;
     font-weight: 400;
     color: hsl(213, 96%, 18%);
+    padding-top: 7px;
 }
 
 .step-2-rectangle {
