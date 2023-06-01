@@ -1,3 +1,16 @@
+
+let userData = {
+    name: "",
+    email: "",
+    phone: 0,
+    plan: "",
+    yearly: false,
+    addOn1: false,
+    addOn2: false,
+    addOn3: false
+}
+
+
 function monthlyState() {
     $('#arcade-subtitle').html('$9/mo');
     $('#advanced-subtitle').html('$12/mo');
@@ -26,6 +39,9 @@ $(function() {
     $('#next-to-step-2').click(function() {
         $('#step-1').hide();
         $('#step-2').show();
+        userData.name = $('#input-name').val();
+        userData.email = $('#input-email').val();
+        userData.phone = $('#input-phone').val();
     })
 
 // --------------------------STEP 2--------------------------
@@ -50,11 +66,21 @@ $(function() {
         $('#step-3').show();
     })
 
+    $('#back-to-step-1').click(function() {
+        $('#step-2').hide();
+        $('#step-1').show();
+    })
+
     // --------------------------STEP 3--------------------------
 
     $('#next-to-step-4').click(function() {
         $('#step-3').hide();
         $('#step-4').show();
+    })
+
+    $('#back-to-step-2').click(function() {
+        $('#step-3').hide();
+        $('#step-2').show();
     })
 
     // --------------------------STEP 4--------------------------
@@ -63,5 +89,17 @@ $(function() {
         $('#step-4').hide();
         $('#step-5').show();
     })
+
+    $('#back-to-step-3').click(function() {
+        $('#step-4').hide();
+        $('#step-3').show();
+    })
+
+    $('#change-button').click(function() {
+        $('#step-4').hide();
+        $('#step-2').show();
+    })
+
+    
 
 })
