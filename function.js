@@ -49,19 +49,26 @@ function yearlyState() {
     tiempoPlan = "Yearly";
 }
 
-$(function() {
-
-    $('#step-1').show();
-
 // --------------------------STEP 1--------------------------
 
-    $('#next-to-step-2').click(function() {
+function verificar() {
+    if ( $("#input-name").val().trim().length > 0 && $("#input-email").val().trim().length > 0 && $("#input-phone").val().trim().length > 0 ) {
         $('#step-1').hide();
         $('#step-2').show();
         userData.name = $('#input-name').val();
         userData.email = $('#input-email').val();
         userData.phone = $('#input-phone').val();
-    })
+    }
+    else {
+        alert("All fields are required");
+    }
+  }
+
+// --------------------------------------DOCUMENT.READY--------------------------------------
+
+$(function() {
+
+    $('#step-1').show();
 
 // --------------------------STEP 2--------------------------
 
