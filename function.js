@@ -20,6 +20,7 @@ const planPrices = {
 
 let tiempoPlan = "";
 let activePlanPrice;
+let readyToSum1, readyToSum2, readyToSum3 = 0;
 
 function monthlyState() {
     userData.yearly = false;
@@ -60,7 +61,6 @@ $(function() {
         userData.name = $('#input-name').val();
         userData.email = $('#input-email').val();
         userData.phone = $('#input-phone').val();
-        console.log(userData)
     })
 
 // --------------------------STEP 2--------------------------
@@ -105,7 +105,6 @@ $(function() {
     $('#next-to-step-3').click(function() {
         $('#step-2').hide();
         $('#step-3').show();
-        console.log(userData);
         if (userData.yearly == true) {
             summaryPlanPrice = (activePlanPrice)*10;
         } else {
@@ -159,7 +158,6 @@ $(function() {
     $('#next-to-step-4').click(function() {
         $('#step-3').hide();
         $('#step-4').show();
-        console.log(userData);
 
         $('#summay-header-plan').html(`${userData.plan} (${tiempoPlan})`);
         if (userData.yearly == true) {
@@ -171,26 +169,46 @@ $(function() {
         if (userData.addOn1 == true) {
             $('#addon-1-summary-title').html($('#addon-1-title').html());
             $('#addon-1-summary-price').html($('#addon-1-price').html());
+            readyToSum1 = planPrices.addOn1;
         } else {
             $('#addon-1-summary-title').html("");
-            $('#addon-1-summary-price').html("")
+            $('#addon-1-summary-price').html("");
+            readyToSum1 = 0;
         }
 
         if (userData.addOn2 == true) {
             $('#addon-2-summary-title').html($('#addon-2-title').html());
             $('#addon-2-summary-price').html($('#addon-2-price').html());
+            readyToSum2 = planPrices.addOn2and3;
         } else {
             $('#addon-2-summary-title').html("");
-            $('#addon-2-summary-price').html("")
+            $('#addon-2-summary-price').html("");
+            readyToSum2 = 0;
         }
 
         if (userData.addOn3 == true) {
             $('#addon-3-summary-title').html($('#addon-3-title').html());
             $('#addon-3-summary-price').html($('#addon-3-price').html());
+            readyToSum3 = planPrices.addOn2and3;
         } else {
             $('#addon-3-summary-title').html("");
-            $('#addon-3-summary-price').html("")
+            $('#addon-3-summary-price').html("");
+            readyToSum3 = 0;
         }
+
+        let sum = (readyToSum1) + (readyToSum2) + (readyToSum3);
+        let sum2 = sum*10;
+        let totalMonthly = sum + summaryPlanPrice;
+        let totalYearly = sum2 + summaryPlanPrice;
+
+        if (userData.yearly == true) {
+            $('#total-price').html(`$${totalYearly}/yr`);
+            $('#total-time').html("Total (per year)");
+        } else {
+            $('#total-price').html(`$${totalMonthly}/mo`);
+            $('#total-time').html("Total (per month)");
+        }
+
     })
 
     $('#back-to-step-2').click(function() {
@@ -203,6 +221,8 @@ $(function() {
     $('#confirm-button').click(function() {
         $('#step-4').hide();
         $('#step-5').show();
+        console.log("Se enviaron los siguientes datos:")
+        console.log(userData);
     })
 
     $('#back-to-step-3').click(function() {
