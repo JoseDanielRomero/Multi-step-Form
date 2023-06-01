@@ -241,9 +241,6 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type=number] {
-  -moz-appearance: textfield;
-}
 
 /* --------------STEP 2: ESTILO CONTENIDO IMPORTANTE-------------- */
 

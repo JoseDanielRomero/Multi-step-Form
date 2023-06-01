@@ -49,9 +49,9 @@ function yearlyState() {
     tiempoPlan = "Yearly";
 }
 
-// --------------------------STEP 1--------------------------
+// --------------------------ONCLICK EVENTS--------------------------
 
-function verificar() {
+function verificarStep1() {
     if ( $("#input-name").val().trim().length > 0 && $("#input-email").val().trim().length > 0 && $("#input-phone").val().trim().length > 0 ) {
         $('#step-1').hide();
         $('#step-2').show();
@@ -61,6 +61,21 @@ function verificar() {
     }
     else {
         alert("All fields are required");
+    }
+  }
+
+  function verificarStep2() {
+    if ( userData.plan.length > 0 ) {
+        $('#step-2').hide();
+        $('#step-3').show();
+        if (userData.yearly == true) {
+            summaryPlanPrice = (activePlanPrice)*10;
+        } else {
+            summaryPlanPrice = activePlanPrice;
+        }
+    }
+    else {
+        alert("Choose a plan");
     }
   }
 
@@ -107,16 +122,6 @@ $(function() {
         $('#arcade-button').removeClass("focus");
         userData.plan = "Pro";
         activePlanPrice = planPrices.pro;
-    })
-
-    $('#next-to-step-3').click(function() {
-        $('#step-2').hide();
-        $('#step-3').show();
-        if (userData.yearly == true) {
-            summaryPlanPrice = (activePlanPrice)*10;
-        } else {
-            summaryPlanPrice = activePlanPrice;
-        }
     })
 
     $('#back-to-step-1').click(function() {
@@ -241,7 +246,5 @@ $(function() {
         $('#step-4').hide();
         $('#step-2').show();
     })
-
-    
 
 })
