@@ -264,7 +264,7 @@ html, body {
     border: 1px solid hsl(243, 100%, 62%);
 }
 
-.botones-planes:focus {
+.focus {
     background-color: #f3f5fd;
     border: 1px solid hsl(243, 100%, 62%);
 }
