@@ -19,7 +19,16 @@ function yearlyState() {
 
 $(function() {
 
-    $('#step-2').show();
+    $('#step-1').show();
+
+// --------------------------STEP 1--------------------------
+
+    $('#next-to-step-2').click(function() {
+        $('#step-1').hide();
+        $('#step-2').show();
+    })
+
+// --------------------------STEP 2--------------------------
 
     monthlyState();
 
@@ -34,6 +43,25 @@ $(function() {
             
         }
 
+    })
+
+    $('#next-to-step-3').click(function() {
+        $('#step-2').hide();
+        $('#step-3').show();
+    })
+
+    // --------------------------STEP 3--------------------------
+
+    $('#next-to-step-4').click(function() {
+        $('#step-3').hide();
+        $('#step-4').show();
+    })
+
+    // --------------------------STEP 4--------------------------
+
+    $('#confirm-button').click(function() {
+        $('#step-4').hide();
+        $('#step-5').show();
     })
 
 })

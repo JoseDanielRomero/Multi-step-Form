@@ -174,7 +174,7 @@ html, body {
     transition: .2s;
 }
 
-#next-button {
+.next-button {
     width: 28%;
     border-radius: 11px;
     background-color: hsl(213, 96%, 18%);
@@ -195,7 +195,7 @@ html, body {
     color: hsl(213, 96%, 18%);
 }
 
-#next-button:hover {
+.next-button:hover {
     cursor: pointer;
     background-color: hsl(213, 86%, 29%);
 }
