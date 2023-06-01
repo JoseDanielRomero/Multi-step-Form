@@ -15,12 +15,18 @@ const planPrices = {
     advanced: 12,
     pro: 15,
     addOn1: 1,
-    addOn2and3: 2,
+    addOn2: 2,
+    addOn3: 2
 }
 
 let tiempoPlan = "";
 let activePlanPrice;
-let readyToSum1, readyToSum2, readyToSum3 = 0;
+
+const readyToSum = {
+    '1': 0,
+    '2': 0,
+    '3': 0
+}
 
 function monthlyState() {
     userData.yearly = false;
@@ -31,7 +37,8 @@ function monthlyState() {
     $('.plan-bonus').css("display","none")
     $('.step-2-box').css("height","60%")
     $('#addon-1-price').html(`+$${planPrices.addOn1}/mo`);
-    $('#addon-2-price, #addon-3-price').html(`+$${planPrices.addOn2and3}/mo`);
+    $('#addon-2-price').html(`+$${planPrices.addOn2}/mo`);
+    $('#addon-3-price').html(`+$${planPrices.addOn3}/mo`);
     tiempoPlan = "Monthly";
 }
 
@@ -45,8 +52,21 @@ function yearlyState() {
     $('.plan-bonus').css("display","")
     $('.step-2-box').css("height","67.5%")
     $('#addon-1-price').html(`+$${(planPrices.addOn1)*10}/yr`);
-    $('#addon-2-price, #addon-3-price').html(`+$${(planPrices.addOn2and3)*10}/yr`);
+    $('#addon-2-price').html(`+$${(planPrices.addOn2)*10}/yr`);
+    $('#addon-3-price').html(`+$${(planPrices.addOn3)*10}/yr`);
     tiempoPlan = "Yearly";
+}
+
+function summaryTitlePrice(num) {
+    if (userData["addOn" + num] == true) {
+        $(`#addon-${num}-summary-title`).html($(`#addon-${num}-title`).html());
+        $(`#addon-${num}-summary-price`).html($(`#addon-${num}-price`).html());
+        readyToSum[num] = planPrices["addOn" + num];
+    } else {
+        $(`#addon-${num}-summary-title`).html("");
+        $(`#addon-${num}-summary-price`).html("");
+        readyToSum[num] = 0;
+    }
 }
 
 // --------------------------ONCLICK EVENTS--------------------------
@@ -178,37 +198,11 @@ $(function() {
             $('#summay-header-price').html(`$${summaryPlanPrice}/mo`);
         }
 
-        if (userData.addOn1 == true) {
-            $('#addon-1-summary-title').html($('#addon-1-title').html());
-            $('#addon-1-summary-price').html($('#addon-1-price').html());
-            readyToSum1 = planPrices.addOn1;
-        } else {
-            $('#addon-1-summary-title').html("");
-            $('#addon-1-summary-price').html("");
-            readyToSum1 = 0;
-        }
+        summaryTitlePrice("1");
+        summaryTitlePrice("2");
+        summaryTitlePrice("3");
 
-        if (userData.addOn2 == true) {
-            $('#addon-2-summary-title').html($('#addon-2-title').html());
-            $('#addon-2-summary-price').html($('#addon-2-price').html());
-            readyToSum2 = planPrices.addOn2and3;
-        } else {
-            $('#addon-2-summary-title').html("");
-            $('#addon-2-summary-price').html("");
-            readyToSum2 = 0;
-        }
-
-        if (userData.addOn3 == true) {
-            $('#addon-3-summary-title').html($('#addon-3-title').html());
-            $('#addon-3-summary-price').html($('#addon-3-price').html());
-            readyToSum3 = planPrices.addOn2and3;
-        } else {
-            $('#addon-3-summary-title').html("");
-            $('#addon-3-summary-price').html("");
-            readyToSum3 = 0;
-        }
-
-        let sum = (readyToSum1) + (readyToSum2) + (readyToSum3);
+        let sum = (readyToSum["1"]) + (readyToSum["2"]) + (readyToSum["3"]);
         let sum2 = sum*10;
         let totalMonthly = sum + summaryPlanPrice;
         let totalYearly = sum2 + summaryPlanPrice;
