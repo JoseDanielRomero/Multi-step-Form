@@ -28,6 +28,8 @@ const readyToSum = {
     '3': 0
 }
 
+// --------------------------FUNCTIONS--------------------------
+
 function monthlyState() {
     userData.yearly = false;
     $('#arcade-subtitle').html(`$${planPrices.arcade}/mo`);
@@ -69,6 +71,18 @@ function summaryTitlePrice(num) {
     }
 }
 
+function focusEffect(num) {
+    $(`#check-addon-${num}`).change(function() {
+        if (this.checked) {
+            $(`#addon-${num}`).addClass("focus");
+            userData["addOn" + num] = true;
+        } else {
+            $(`#addon-${num}`).removeClass("focus");
+            userData["addOn" + num] = false;
+        }
+    })
+}
+
 // --------------------------ONCLICK EVENTS--------------------------
 
 function verificarStep1() {
@@ -82,9 +96,9 @@ function verificarStep1() {
     else {
         alert("All fields are required");
     }
-  }
+}
 
-  function verificarStep2() {
+function verificarStep2() {
     if ( userData.plan.length > 0 ) {
         $('#step-2').hide();
         $('#step-3').show();
@@ -97,7 +111,7 @@ function verificarStep1() {
     else {
         alert("Choose a plan");
     }
-  }
+}
 
 // --------------------------------------DOCUMENT.READY--------------------------------------
 
@@ -151,41 +165,9 @@ $(function() {
 
     // --------------------------STEP 3--------------------------
 
-    $('#check-addon-1').change(function() {
-
-        if (this.checked) {
-            $('#addon-1').addClass("focus");
-            userData.addOn1 = true;
-        } else {
-            $('#addon-1').removeClass("focus");
-            userData.addOn1 = false;
-        }
-
-    })
-
-    $('#check-addon-2').change(function() {
-
-        if (this.checked) {
-            $('#addon-2').addClass("focus");
-            userData.addOn2 = true;
-        } else {
-            $('#addon-2').removeClass("focus");
-            userData.addOn2 = false;
-        }
-
-    })
-
-    $('#check-addon-3').change(function() {
-
-        if (this.checked) {
-            $('#addon-3').addClass("focus");
-            userData.addOn3 = true;
-        } else {
-            $('#addon-3').removeClass("focus");
-            userData.addOn3 = false;
-        }
-
-    })
+    focusEffect(1);
+    focusEffect(2);
+    focusEffect(3);
 
     $('#next-to-step-4').click(function() {
         $('#step-3').hide();
