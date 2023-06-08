@@ -539,3 +539,77 @@ hr {
     line-height: 140%;
     margin-top: -3%;
 }
+
+/* ----------------------------------------------------MEDIA QUERY: MOBILE-------------- */
+
+
+@media screen and (max-width: 480px) {
+
+    .steps {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .step-by-step-box {
+        height: 27%;
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 11%;
+        padding-left: 0;
+        background-image: url(bg-sidebar-mobile.svg);
+        background-position-x: center;
+        background-position-y: bottom;
+    }
+
+    .box-out {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box {
+        display: none;
+    }
+
+    .main-content {
+        /* background-color: #fbfbfb; */
+        background-color: green;
+        position: absolute;
+        margin-top: 26%;
+        height: 68%;
+        width: 90%;
+        border-radius: 16px;
+        padding-top: 8%;
+        justify-content: space-around;
+    }
+
+    .text-box {
+        gap: 10%;
+    }
+
+    .button-box {
+        height: 12%;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 999999;
+        background-color: aqua;
+        align-items: center;
+    }
+
+    .botones {
+        height: 60%;
+    }
+
+}
