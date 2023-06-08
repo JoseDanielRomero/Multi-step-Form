@@ -602,7 +602,7 @@ hr {
         width: 90%;
         border-radius: 16px;
         justify-content: space-around;
-        box-shadow: 8px 7px 47px 0px rgba(0,0,0,0.08);
+        box-shadow: 8px 7px 47px 0px rgba(0,0,0,0.10);
     }
 
     .text-box {
@@ -623,6 +623,7 @@ hr {
     .botones {
         height: 60%;
         border-radius: 10px;
+        text-align: center;
     }
 
     /* --------------STEP 2-------------- */
