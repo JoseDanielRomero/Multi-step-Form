@@ -40,7 +40,7 @@ html, body {
     background-image: url(bg-sidebar-desktop.svg);
     background-size: cover;
     background-position-y: bottom;
-    background-color: aqua;
+    background-color: gray;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -542,7 +542,7 @@ hr {
 
 /* ----------------------------------------------------MEDIA QUERY: MOBILE-------------- */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 900px) {
 
     .steps {
         height: 100%;
