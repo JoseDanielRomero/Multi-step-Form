@@ -35,7 +35,6 @@ Users can:
 - See a summary of their selections on the final step and confirm their order
 .
 - See hover and focus states for all interactive elements on the page.
-- Select the content to display between 'Upcoming matches' and 'Past matches'.
 
 ## 🎨 UX/UI design
 
